@@ -1,0 +1,49 @@
+<%- include('../layouts/head') %>
+<div class="projects-page">
+  <div class="page-header">
+    <h1>Projects</h1>
+    <a href="/editor" class="btn btn-primary">New Project</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="card-title">Saved Projects</span></div>
+    <div class="card-body">
+      <% if (projects && projects.length > 0) { %>
+        <table class="project-table">
+          <thead>
+            <tr><th>Name</th><th>Type</th><th>Created</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            <% projects.forEach(p => { %>
+              <tr>
+                <td><%= p.name || 'Untitled' %></td>
+                <td><%= p.type || 'text' %></td>
+                <td><%= p.createdAt ? new Date(p.createdAt).toLocaleDateString() : '-' %></td>
+                <td>
+                  <a href="/editor/<%= p.id %>" class="btn btn-small">Edit</a>
+                  <button onclick="deleteProject('<%= p.id %>')" class="btn btn-small btn-danger">Delete</button>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <p class="empty">No projects saved yet.</p>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<script>
+function deleteProject(id) {
+  if (confirm('Delete this project?')) {
+    fetch('/api/projects/' + id, { method: 'DELETE' })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) location.reload();
+        else alert('Failed to delete');
+      });
+  }
+}
+</script>
+<%- include('../layouts/foot') %>

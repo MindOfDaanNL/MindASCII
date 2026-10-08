@@ -1,0 +1,17 @@
+{
+  "name": "Small",
+  "height": 4,
+  "category": "Classic",
+  "description": "Compact 4-line font",
+  "characters": {
+    " ": ["  ", "  ", "  ", "  "],
+    "H": ["H  H", "HHHH", "H  H", "    "],
+    "e": ["    ", "He ", "He ", " H "],
+    "l": ["l   ", "l   ", "l   ", "l   ", "llll"],
+    "o": ["    ", " oo ", "o o", " oo ", "    "],
+    "H": ["H  H", "HHHH", "H  H", "    "],
+    "I": [" II ", "  I ", "  I ", " II "],
+    "W": ["W  W", "W  W", "WcWc", "W W "],
+    "A": [" A ", "A A", "AAA", "A A"]
+  }
+}

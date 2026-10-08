@@ -1,0 +1,18 @@
+{
+  "name": "GitHub README",
+  "label": "GitHub README",
+  "category": "Markdown",
+  "description": "Output optimized for GitHub README Markdown",
+  "settings": {
+    "maxWidth": 80,
+    "allowedCharacters": "unicode",
+    "commentSyntax": null,
+    "ansiSupport": false,
+    "unicodeSupport": true,
+    "recommendedFonts": ["Block", "Standard"],
+    "recommendedBorders": ["double", "single"],
+    "recommendedSpacing": 1,
+    "codeBlock": true,
+    "codeLanguage": "text"
+  }
+}

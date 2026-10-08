@@ -1,0 +1,7 @@
+[
+  { "name": "VS Code", "file": "vscode", "label": "VS Code", "category": "Editor" },
+  { "name": "Terminal", "file": "terminal", "label": "Linux Terminal", "category": "Terminal" },
+  { "name": "GitHub README", "file": "github-readme", "label": "GitHub README", "category": "Markdown" },
+  { "name": "Code Comment", "file": "code-comment", "label": "Code Comment", "category": "Developer" },
+  { "name": "Discord", "file": "discord", "label": "Discord", "category": "Chat" }
+]

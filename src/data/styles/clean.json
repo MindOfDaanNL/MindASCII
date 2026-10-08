@@ -1,0 +1,12 @@
+{
+  "name": "Clean",
+  "label": "Clean",
+  "category": "Minimal",
+  "description": "Simple, clean style with standard fonts",
+  "settings": {
+    "font": "Standard",
+    "border": "single",
+    "spacing": 1,
+    "alignment": "center"
+  }
+}

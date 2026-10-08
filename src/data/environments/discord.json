@@ -1,0 +1,18 @@
+{
+  "name": "Discord",
+  "label": "Discord",
+  "category": "Chat",
+  "description": "Output optimized for Discord messages",
+  "settings": {
+    "maxWidth": 60,
+    "allowedCharacters": "unicode",
+    "commentSyntax": null,
+    "ansiSupport": false,
+    "unicodeSupport": true,
+    "recommendedFonts": ["Standard", "Small"],
+    "recommendedBorders": ["single", "ascii"],
+    "recommendedSpacing": 1,
+    "codeBlock": true,
+    "codeLanguage": "text"
+  }
+}

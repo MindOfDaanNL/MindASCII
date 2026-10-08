@@ -1,0 +1,36 @@
+{
+  "name": "mindascii",
+  "version": "1.0.0",
+  "description": "Powerful web-based ASCII art generator and editor - ASCII Art Design Studio",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "test": "node test/test.js",
+    "lint": "node -e \"console.log('Lint: no linter configured')\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MindDevelopment/MindASCII.git"
+  },
+  "keywords": [
+    "ascii",
+    "ascii-art",
+    "generator",
+    "web-app",
+    "banner",
+    "box",
+    "table"
+  ],
+  "author": "MindDevelopment",
+  "license": "Private",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}

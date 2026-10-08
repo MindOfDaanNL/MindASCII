@@ -1,0 +1,96 @@
+<%- include('../layouts/head') %>
+<div class="settings-page">
+  <h1>Settings</h1>
+
+  <div class="card">
+    <div class="card-header"><span class="card-title">Application Settings</span></div>
+    <div class="card-body">
+      <form id="settingsForm" class="form">
+        <div class="form-row">
+          <label>Theme</label>
+          <select name="theme" class="select">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="system">System</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Default Width</label>
+          <input type="number" name="width" value="80" min="1" max="200" class="input">
+        </div>
+        <div class="form-row">
+          <label>Default Usage</label>
+          <select name="usage" class="select">
+            <% environments.forEach(e => { %>
+              <option value="<%= e.name %>"><%= e.name %></option>
+            <% }); %>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Default Font</label>
+          <select name="font" class="select">
+            <% fonts.forEach(f => { %>
+              <option value="<%= f.name %>"><%= f.name %></option>
+            <% }); %>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Default Border</label>
+          <select name="border" class="select">
+            <% borders.forEach(b => { %>
+              <option value="<%= b.name %>"><%= b.label || b.name %></option>
+            <% }); %>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Default Character Set</label>
+          <select name="charset" class="select">
+            <option value="unicode">Unicode</option>
+            <option value="ascii">ASCII only</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Auto-generate</label>
+          <input type="checkbox" name="autogenerate">
+        </div>
+        <div class="form-row">
+          <label>Auto-save</label>
+          <input type="checkbox" name="autosave">
+        </div>
+        <div class="form-row">
+          <label>Editor Font Size</label>
+          <input type="number" name="editorFontSize" value="14" min="8" max="32" class="input">
+        </div>
+        <div class="form-row">
+          <label>Preview Font Size</label>
+          <input type="number" name="previewFontSize" value="14" min="8" max="32" class="input">
+        </div>
+        <button type="submit" class="btn btn-primary">Save Settings</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-header"><span class="card-title">Available Fonts</span></div>
+      <div class="card-body">
+        <ul class="list">
+          <% fonts.forEach(f => { %>
+            <li><%= f.name %> (<%= f.category %>) - Height: <%= f.height %></li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">Available Borders</span></div>
+      <div class="card-body">
+        <ul class="list">
+          <% borders.forEach(b => { %>
+            <li><%= b.label || b.name %> (<%= b.type %>)</li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../layouts/foot') %>

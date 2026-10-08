@@ -1,0 +1,54 @@
+<%- include('../layouts/head') %>
+<div class="editor-page">
+  <div class="shortcuts-bar">
+    <div class="shortcut-item"><span class="shortcut-key">Ctrl+Enter</span> Generate</div>
+    <div class="shortcut-item"><span class="shortcut-key">Ctrl+S</span> Save Project</div>
+    <div class="shortcut-item"><span class="shortcut-key">Ctrl+Z</span> Undo</div>
+    <div class="shortcut-item"><span class="shortcut-key">Ctrl+Shift+Z</span> Redo</div>
+    <div class="shortcut-item"><span class="shortcut-key">Ctrl+A</span> Select All</div>
+  </div>
+
+  <h1>ASCII Editor</h1>
+
+  <div class="grid editor-grid">
+    <div class="editor-controls">
+      <div class="card">
+        <div class="card-header"><span class="card-title">Editor Controls</span></div>
+        <div class="card-body">
+          <div class="form-row">
+            <label>Text / Output</label>
+            <textarea id="editorText" class="editor-textarea" rows="8" spellcheck="false"></textarea>
+          </div>
+          <div class="editor-actions">
+            <button id="editorUndo" class="btn btn-small">Undo</button>
+            <button id="editorRedo" class="btn btn-small">Redo</button>
+            <button id="editorCopy" class="btn btn-small">Copy</button>
+            <button id="editorFind" class="btn btn-small">Find</button>
+            <button id="editorReplace" class="btn btn-small">Replace</button>
+            <button id="editorFormat" class="btn btn-small">Trim Trailing WS</button>
+            <button id="editorExport" class="btn btn-small btn-primary">Export</button>
+            <button id="editorSave" class="btn btn-small btn-primary">Save Project</button>
+          </div>
+          <div class="stats-row">
+            <span>Characters: <strong id="charCount">0</strong></span>
+            <span>Width: <strong id="outputWidth">0</strong></span>
+            <span>Height: <strong id="outputHeight">0</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="editor-preview">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Live Preview</span>
+        </div>
+        <div class="card-body">
+          <pre id="editorPreview" class="preview-output preview-placeholder">No preview available</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/editor.js"></script>
+<%- include('../layouts/foot') %>

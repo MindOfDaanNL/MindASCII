@@ -1,0 +1,19 @@
+{
+  "name": "Terminal",
+  "label": "Linux Terminal",
+  "category": "Terminal",
+  "description": "Output optimized for Linux terminal output",
+  "settings": {
+    "maxWidth": 80,
+    "allowedCharacters": "ansi",
+    "commentSyntax": {
+      "prefix": "# ",
+      "suffix": ""
+    },
+    "ansiSupport": true,
+    "unicodeSupport": true,
+    "recommendedFonts": ["Standard", "Slant"],
+    "recommendedBorders": ["single", "ascii"],
+    "recommendedSpacing": 0
+  }
+}

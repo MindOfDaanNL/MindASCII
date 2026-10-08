@@ -1,0 +1,7 @@
+[
+  { "name": "Standard", "height": 6, "category": "Classic", "description": "Classic ASCII font" },
+  { "name": "Block", "height": 5, "category": "Classic", "description": "Block-style font with solid fills" },
+  { "name": "Slant", "height": 6, "category": "Classic", "description": "Slanted ASCII font" },
+  { "name": "Small", "height": 4, "category": "Classic", "description": "Compact small font" },
+  { "name": "Mini", "height": 3, "category": "Minimal", "description": "Minimal height font" }
+]

@@ -1,0 +1,125 @@
+<%- include('../layouts/head') %>
+<script>
+function useFont(name) {
+  const quickFont = document.getElementById('quickFont');
+  if (quickFont) { quickFont.value = name; generateQuick(); }
+}
+function useBorder(name) {
+  window.location.href = '/generator?border=' + name;
+}
+function copySymbol(s) {
+  navigator.clipboard.writeText(s).then(() => {
+    const toast = document.createElement('div');
+    toast.textContent = 'Copied: ' + s;
+    toast.style.cssText = 'position:fixed;bottom:20px;right:20px;background:#00d4ff;color:#0a0a0e;padding:8px 16px;border-radius:6px;font-family:monospace;font-size:13px;z-index:1000;';
+    document.body.appendChild(toast);
+    setTimeout(() => document.body.removeChild(toast), 1500);
+  });
+}
+
+const quickForm = document.getElementById('quickForm');
+const quickText = document.getElementById('quickText');
+const quickFont = document.getElementById('quickFont');
+const quickUsage = document.getElementById('quickUsage');
+const quickPreview = document.getElementById('quickPreview');
+
+function generateQuick() {
+  const text = quickText?.value || 'MindASCII';
+  const font = quickFont?.value || 'Standard';
+  const usage = quickUsage?.value || 'Terminal';
+
+  fetch('/api/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'text', text: text, font: font, usage: usage, width: 80 })
+  })
+    .then(r => r.json())
+    .then(result => {
+      if (result.success && quickPreview) {
+        quickPreview.textContent = result.output;
+        quickPreview.classList.remove('preview-placeholder');
+      }
+    })
+    .catch(err => { if (quickPreview) { quickPreview.textContent = 'Error: ' + err.message; } });
+}
+
+if (quickForm) {
+  quickForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    generateQuick();
+  });
+  quickFont?.addEventListener('change', generateQuick);
+  quickUsage?.addEventListener('change', generateQuick);
+  quickText?.addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); generateQuick(); }
+  });
+  generateQuick();
+}
+</script>
+
+<div class="dashboard">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+    <h1 style="margin:0;">MindASCII</h1>
+    <button onclick="toggleTheme()" class="btn btn-small" style="margin-top:0;">🌓</button>
+  </div>
+  <p class="subtitle">Powerful web-based ASCII Art Design Studio</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-header"><span class="card-title">Quick Generate</span></div>
+      <div class="card-body">
+        <form id="quickForm" class="form">
+          <div class="form-row">
+            <label>Text</label>
+            <input type="text" name="text" id="quickText" value="MindASCII" class="input">
+          </div>
+          <div class="form-row">
+            <label>Font</label>
+            <select name="font" id="quickFont" class="select">
+              <% fonts.forEach(f => { %>
+                <option value="<%= f.name %>"><%= f.name %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Usage</label>
+            <select name="usage" id="quickUsage" class="select">
+              <% environments.forEach(e => { %>
+                <option value="<%= e.name %>"><%= e.name %></option>
+              <% }); %>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Generate</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><span class="card-title">Preview</span></div>
+      <div class="card-body">
+        <pre id="quickPreview" class="preview-output preview-placeholder">Your ASCII output will appear here</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 style="margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase;">Fonts</h2>
+<div class="font-grid">
+  <% fontPreviews.forEach(f => { %>
+    <div class="font-card" onclick="useFont('<%= f.name %>')">
+      <div style="font-size:11px; color:var(--text-secondary); margin-bottom:0.3rem;"><%= f.name %> (<%= f.category %>)</div>
+      <pre class="font-preview"><%= f.preview %></pre>
+    </div>
+  <% }); %>
+</div>
+
+<%- include('../layouts/foot') %>
+
+<script>
+function toggleTheme() {
+  const current = document.body.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.body.setAttribute('data-theme', next);
+  localStorage.setItem('mindascii_theme', next);
+}
+</script>

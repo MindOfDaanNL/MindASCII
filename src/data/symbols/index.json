@@ -1,0 +1,7 @@
+[
+  { "name": "arrows", "file": "arrows", "label": "Arrows" },
+  { "name": "stars", "file": "stars", "label": "Stars" },
+  { "name": "boxes", "file": "boxes", "label": "Boxes" },
+  { "name": "checkmarks", "file": "checkmarks", "label": "Checkmarks" },
+  { "name": "warnings", "file": "warnings", "label": "Warnings" }
+]

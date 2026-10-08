@@ -1,0 +1,13 @@
+{
+  "name": "Terminal",
+  "label": "Terminal",
+  "category": "Terminal",
+  "description": "Pure terminal-safe ASCII style",
+  "settings": {
+    "font": "Standard",
+    "border": "ascii",
+    "spacing": 0,
+    "alignment": "left",
+    "charset": "ascii"
+  }
+}

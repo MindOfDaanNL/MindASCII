@@ -1,0 +1,8 @@
+[
+  { "name": "single", "file": "single", "label": "Single", "type": "single" },
+  { "name": "double", "file": "double", "label": "Double", "type": "double" },
+  { "name": "rounded", "file": "rounded", "label": "Rounded", "type": "rounded" },
+  { "name": "heavy", "file": "heavy", "label": "Heavy", "type": "heavy" },
+  { "name": "ascii", "file": "ascii", "label": "ASCII-only", "type": "ascii" },
+  { "name": "dashed", "file": "dashed", "label": "Dashed", "type": "dashed" }
+]

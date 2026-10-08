@@ -1,0 +1,19 @@
+{
+  "name": "dashed",
+  "label": "Dashed",
+  "type": "dashed",
+  "chars": {
+    "topLeft": "+",
+    "topRight": "+",
+    "bottomLeft": "+",
+    "bottomRight": "+",
+    "horizontal": "-",
+    "vertical": "|",
+    "teeRight": "+",
+    "teeLeft": "+",
+    "teeDown": "+",
+    "teeUp": "+",
+    "cross": "+"
+  },
+  "fillHorizontal": "."
+}

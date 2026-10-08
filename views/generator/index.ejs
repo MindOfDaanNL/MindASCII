@@ -1,0 +1,120 @@
+<%- include('../layouts/head') %>
+<div class="generator-page">
+  <h1>ASCII Generator</h1>
+
+  <div class="grid generator-grid">
+    <div class="generator-controls">
+      <div class="card">
+        <div class="card-header"><span class="card-title">Generator Settings</span></div>
+        <div class="card-body">
+          <form id="generatorForm" class="form">
+            <div class="form-row">
+              <label>Type</label>
+              <select name="type" id="genType" class="select">
+                <option value="text">Text</option>
+                <option value="banner">Banner</option>
+                <option value="box">Box</option>
+                <option value="header">Header</option>
+                <option value="separator">Separator</option>
+                <option value="table">Table</option>
+                <option value="logo">Logo</option>
+                <option value="comment">Code Comment</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Text</label>
+              <input type="text" name="text" id="genText" value="MindASCII" class="input">
+            </div>
+            <div class="form-row">
+              <label>Character</label>
+              <input type="text" name="character" id="genChar" value="-" maxlength="3" class="input">
+            </div>
+            <div class="form-row">
+              <label>Pattern (optional)</label>
+              <input type="text" name="pattern" id="genPattern" maxlength="10" class="input" placeholder="e.g. -=*">
+            </div>
+            <div class="form-row">
+              <label>Length</label>
+              <input type="number" name="length" id="genLength" value="60" min="1" max="200" class="input">
+            </div>
+            <div class="form-row">
+              <label>Usage / Environment</label>
+              <select name="usage" id="genUsage" class="select">
+                <% environments.forEach(e => { %>
+                  <option value="<%= e.name %>"><%= e.name %></option>
+                <% }); %>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Language</label>
+              <select name="language" id="genLanguage" class="select">
+                <% languages.forEach(lang => { %>
+                  <option value="<%= lang %>"><%= lang %></option>
+                <% }); %>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Font</label>
+              <select name="font" id="genFont" class="select">
+                <% fonts.forEach(f => { %>
+                  <option value="<%= f.name %>"><%= f.name %></option>
+                <% }); %>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Style</label>
+              <select name="style" id="genStyle" class="select">
+                <% styles.forEach(s => { %>
+                  <option value="<%= s.name %>"><%= s.name %></option>
+                <% }); %>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Border</label>
+              <select name="border" id="genBorder" class="select">
+                <% borders.forEach(b => { %>
+                  <option value="<%= b.name %>"><%= b.label || b.name %></option>
+                <% }); %>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Width</label>
+              <input type="number" name="width" id="genWidth" value="80" min="1" max="200" class="input">
+            </div>
+            <div class="form-row">
+              <label>Alignment</label>
+              <select name="alignment" id="genAlign" class="select">
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+                <option value="justified">Justified</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Padding</label>
+              <input type="number" name="padding" id="genPadding" value="1" min="0" max="20" class="input">
+            </div>
+            <button type="submit" class="btn btn-primary">Generate</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="generator-preview">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Preview</span>
+          <div class="preview-actions">
+            <button id="copyBtn" class="btn btn-small">Copy</button>
+            <button id="exportBtn" class="btn btn-small">Export</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <pre id="genOutput" class="preview-output preview-placeholder">Your ASCII output will appear here</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/generator.js"></script>
+<%- include('../layouts/foot') %>

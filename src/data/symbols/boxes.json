@@ -1,0 +1,8 @@
+{
+  "name": "boxes",
+  "label": "Boxes",
+  "description": "Box drawing symbols",
+  "symbols": [
+    "□", "■", "▢", "▣", "▤", "▥", "▦", "▩"
+  ]
+}

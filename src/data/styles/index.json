@@ -1,0 +1,7 @@
+[
+  { "name": "Clean", "label": "Clean", "category": "Minimal" },
+  { "name": "Minimal", "label": "Minimal", "category": "Minimal" },
+  { "name": "Retro", "label": "Retro", "category": "Classic" },
+  { "name": "Terminal", "label": "Terminal", "category": "Terminal" },
+  { "name": "Developer", "label": "Developer", "category": "Developer" }
+]

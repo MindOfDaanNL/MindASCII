@@ -1,0 +1,61 @@
+<%- include('../layouts/head') %>
+<div class="templates-page">
+  <div class="page-header">
+    <h1>Templates</h1>
+  </div>
+
+  <% if (templates && templates.length > 0) { %>
+    <div class="grid template-grid">
+      <% templates.forEach(t => { %>
+        <div class="card">
+          <div class="card-header"><span class="card-title"><%= t.name || 'Untitled' %></span></div>
+          <div class="card-body">
+            <pre class="preview-output small"><%= t.output || t.content || 'No preview' %></pre>
+            <div class="template-actions">
+              <button onclick="useTemplate('<%= t.id %>')" class="btn btn-small">Use</button>
+              <button onclick="editTemplate('<%= t.id %>')" class="btn btn-small">Edit</button>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <p class="empty">No templates available.</p>
+  <% } %>
+
+  <h2>Developer Templates</h2>
+  <div class="grid template-grid">
+    <div class="card">
+      <div class="card-header"><span class="card-title">Project Header</span></div>
+      <div class="card-body">
+        <pre class="preview-output small">╔════════════════════════════╗
+║          MindASCII          ║
+╚════════════════════════════╝</pre>
+        <button onclick="loadExample('project-header')" class="btn btn-small">Use</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">Section Header</span></div>
+      <div class="card-body">
+        <pre class="preview-output small">// ============================================================
+// Section Title
+// ============================================================</pre>
+        <button onclick="loadExample('section-header')" class="btn btn-small">Use</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function useTemplate(id) {
+  fetch('/api/templates/' + id).then(r => r.json()).then(d => {
+    if (d.template && d.template.output) {
+      localStorage.setItem('mindascii_template', JSON.stringify(d.template));
+      window.location.href = '/generator';
+    }
+  });
+}
+function editTemplate(id) { alert('Edit template: ' + id); }
+function loadExample(name) { alert('Loading: ' + name); }
+</script>
+<%- include('../layouts/foot') %>

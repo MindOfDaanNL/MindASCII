@@ -1,0 +1,22 @@
+{
+  "name": "Code Comment",
+  "label": "Code Comment",
+  "category": "Developer",
+  "description": "Output for code comments",
+  "settings": {
+    "maxWidth": 80,
+    "allowedCharacters": "unicode",
+    "commentSyntax": {
+      "prefix": "// ",
+      "suffix": "",
+      "blockStart": "/* ",
+      "blockEnd": " */",
+      "blockLine": " * "
+    },
+    "ansiSupport": false,
+    "unicodeSupport": false,
+    "recommendedFonts": ["Standard"],
+    "recommendedBorders": ["ascii"],
+    "recommendedSpacing": 0
+  }
+}

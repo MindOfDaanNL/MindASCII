@@ -1,0 +1,12 @@
+{
+  "name": "Minimal",
+  "label": "Minimal",
+  "category": "Minimal",
+  "description": "Minimal style with compact output",
+  "settings": {
+    "font": "Small",
+    "border": "ascii",
+    "spacing": 0,
+    "alignment": "left"
+  }
+}

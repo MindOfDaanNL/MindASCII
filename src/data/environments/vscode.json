@@ -1,0 +1,24 @@
+{
+  "name": "VS Code",
+  "label": "VS Code",
+  "category": "Editor",
+  "description": "Output optimized for VS Code source files",
+  "settings": {
+    "maxWidth": 80,
+    "allowedCharacters": "unicode",
+    "commentSyntax": {
+      "prefix": "// ",
+      "suffix": "",
+      "blockStart": "/* ",
+      "blockEnd": " */",
+      "blockLine": " * "
+    },
+    "ansiSupport": false,
+    "unicodeSupport": true,
+    "recommendedFonts": ["Block", "Standard"],
+    "recommendedBorders": ["double", "rounded"],
+    "recommendedSpacing": 1,
+    "tabBehavior": "space",
+    "tabSize": 2
+  }
+}

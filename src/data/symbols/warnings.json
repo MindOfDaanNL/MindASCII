@@ -1,0 +1,8 @@
+{
+  "name": "warnings",
+  "label": "Warnings",
+  "description": "Warning symbols",
+  "symbols": [
+    "⚠", "⚡", "✎", "✍", "✂", "♺", "☢", "☣"
+  ]
+}

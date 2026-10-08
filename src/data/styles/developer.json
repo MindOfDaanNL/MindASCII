@@ -1,0 +1,13 @@
+{
+  "name": "Developer",
+  "label": "Developer",
+  "category": "Developer",
+  "description": "Developer-oriented style with code comment support",
+  "settings": {
+    "font": "Block",
+    "border": "double",
+    "spacing": 1,
+    "alignment": "center",
+    "charset": "unicode"
+  }
+}

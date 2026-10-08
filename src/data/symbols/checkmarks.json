@@ -1,0 +1,8 @@
+{
+  "name": "checkmarks",
+  "label": "Checkmarks",
+  "description": "Checkmark and cross symbols",
+  "symbols": [
+    "✓", "✔", "✗", "✕", "✖", "☑", "☒"
+  ]
+}

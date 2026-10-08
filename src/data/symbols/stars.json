@@ -1,0 +1,8 @@
+{
+  "name": "stars",
+  "label": "Stars",
+  "description": "Star symbols",
+  "symbols": [
+    "★", "☆", "✦", "✧", "✶", "✴", "✵", "✪", "✫", "✬"
+  ]
+}
